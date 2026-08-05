@@ -173,22 +173,35 @@ def generate_qr_image(code):
 def index():
     return jsonify({'status': 'ok', 'message': 'IPA Promo API работает'})
 
-@app.route('/api/debug/promotions')
-def debug_promotions():
-    promos = Promotion.query.all()
+@app.route('/api/fix-promotions')
+def fix_promotions():
+    """Принудительно создаёт акции для всех баров"""
+    code_words = ['СОСЕД', 'ЛОСЬ', 'ПИВО', 'ДРУГ']
     bars = Bar.query.all()
+    created = []
+    for i, bar in enumerate(bars):
+        existing = Promotion.query.filter_by(bar_id=bar.id).first()
+        if not existing:
+            promo = Promotion(
+                bar_id=bar.id,
+                title='IPA Week',
+                gift_name='Бесплатный бокал IPA',
+                description='Назови кодовое слово и покажи QR бармену',
+                code_word=code_words[i] if i < len(code_words) else f'CODE{i+1}',
+                menu_url='https://taplink.cc/your_bar',
+                is_active=True,
+                qr_ttl_minutes=15
+            )
+            db.session.add(promo)
+            created.append(bar.name)
+    db.session.commit()
     return jsonify({
-        'promotions_count': len(promos),
-        'promotions': [{
-            'id': p.id,
-            'bar_id': p.bar_id,
-            'title': p.title,
-            'is_active': p.is_active,
-            'code_word': p.code_word
-        } for p in promos],
-        'bars_count': len(bars),
-        'bars': [{'id': b.id, 'name': b.name} for b in bars]
+        'success': True,
+        'created': created,
+        'total_bars': len(bars),
+        'total_promotions': Promotion.query.count()
     })
+
 
 @app.route('/api/bars', methods=['GET'])
 
