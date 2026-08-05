@@ -601,15 +601,28 @@ def init_db():
                 name='Главный админ', role='admin'))
 
         code_words = ['СОСЕД', 'ЛОСЬ', 'ПИВО', 'ДРУГ']
+        
+        # ПРИНУДИТЕЛЬНО создаём акции для каждого бара
         for i, bar in enumerate(bars):
-            if Promotion.query.filter_by(bar_id=bar.id).count() == 0:
-                db.session.add(Promotion(
-                    bar_id=bar.id, title='IPA Week',
+            promo = Promotion.query.filter_by(bar_id=bar.id).first()
+            if not promo:
+                promo = Promotion(
+                    bar_id=bar.id,
+                    title='IPA Week',
                     gift_name='Бесплатный бокал IPA',
                     description='Назови кодовое слово и покажи QR бармену',
                     code_word=code_words[i],
                     menu_url='https://taplink.cc/your_bar',
-                    is_active=True, qr_ttl_minutes=15))
+                    is_active=True,
+                    qr_ttl_minutes=15
+                )
+                db.session.add(promo)
+                print(f"➕ Создана акция для бара: {bar.name}")
+            else:
+                # Активируем существующую акцию (на всякий случай)
+                promo.is_active = True
+                promo.code_word = code_words[i]
+                print(f"✓ Акция обновлена для бара: {bar.name}")
 
         for i, bar in enumerate(bars):
             login = f'bar{i + 1}'
@@ -620,7 +633,6 @@ def init_db():
                     name=f'Бармен {bar.name}', role='bartender'))
 
         if Phrase.query.count() == 0:
-  
             phrases = [
                 "Ты выглядишь потрясающе именно сегодня.",
                 "Твоя улыбка спасёт этот мир.",
@@ -663,12 +675,11 @@ def init_db():
                 "Сегодня ты — центр этой вселенной.",
                 "Ты прекрасна. Это факт, а не мнение.",
             ]
-            
             for i, text in enumerate(phrases, start=1):
                 db.session.add(Phrase(day_number=i, text=text))
 
         db.session.commit()
-        print(f"✅ База инициализирована, баров: {len(bars)}")
+        print(f"✅ База инициализирована, баров: {len(bars)}, акций: {Promotion.query.count()}")
 
 init_db()
 if __name__ == '__main__':
