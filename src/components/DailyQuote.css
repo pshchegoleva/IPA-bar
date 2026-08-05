@@ -1,0 +1,24 @@
+.quote-card {
+  margin: 0 20px 16px;
+  padding: 20px 22px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeIn .6s ease;
+}
+
+.quote-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #D3874B;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.quote-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(245, 242, 235, 0.85);
+  font-style: italic;
+}

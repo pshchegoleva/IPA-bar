@@ -1,0 +1,274 @@
+.ap-page {
+  min-height: 100vh;
+  background: #0A0A0B;
+  padding: 20px;
+}
+
+.ap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ap-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ap-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: rgba(211, 135, 75, 0.12);
+  border: 1px solid rgba(211, 135, 75, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D3874B;
+}
+
+.ap-info h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.ap-info p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #D3874B;
+  font-weight: 600;
+}
+
+.ap-logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(245, 242, 235, 0.7);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ap-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.ap-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 11px 16px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(245, 242, 235, 0.6);
+  white-space: nowrap;
+}
+
+.ap-tabs button.active {
+  background: rgba(211, 135, 75, 0.15);
+  border-color: rgba(211, 135, 75, 0.4);
+  color: #D3874B;
+}
+
+.ap-filter {
+  margin-bottom: 16px;
+}
+
+.ap-filter select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #131316;
+  color: #F5F2EB;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+}
+
+.ap-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ap-stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px;
+  text-align: center;
+}
+
+.ap-stat-value {
+  font-size: 34px;
+  font-weight: 800;
+  color: #D3874B;
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ap-stat-label {
+  color: rgba(245, 242, 235, 0.5);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ap-empty {
+  text-align: center;
+  padding: 40px;
+  color: rgba(245, 242, 235, 0.4);
+}
+
+.ap-journal-item, .ap-row {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.ap-journal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ap-journal-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.ap-journal-left strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ap-journal-left span {
+  color: rgba(245, 242, 235, 0.45);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.ap-journal-mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ap-journal-mid span {
+  font-size: 13px;
+  color: rgba(245, 242, 235, 0.75);
+}
+
+.ap-journal-staff {
+  color: rgba(245, 242, 235, 0.4) !important;
+  font-size: 11px !important;
+}
+
+.ap-journal-score {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #D3874B;
+}
+
+.ap-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.ap-row-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ap-row-info strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ap-row-info span {
+  color: rgba(245, 242, 235, 0.5);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.ap-codeword {
+  color: #D3874B !important;
+  font-weight: 700;
+}
+
+.ap-status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 6px;
+  width: fit-content;
+}
+
+.ap-status.on {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4CAF50;
+}
+
+.ap-status.off {
+  background: rgba(255, 107, 107, 0.12);
+  color: #FF6B6B;
+}
+
+.ap-row-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ap-row-actions button, .ap-row > button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.ap-on {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4CAF50;
+}
+
+.ap-off {
+  background: rgba(240, 173, 78, 0.15);
+  color: #F0AD4E;
+}
+
+.ap-del {
+  background: rgba(255, 107, 107, 0.12);
+  color: #FF6B6B;
+}

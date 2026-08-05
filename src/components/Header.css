@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 20px 8px;
+}
+
+.header-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: rgba(211, 135, 75, 0.12);
+  border: 1px solid rgba(211, 135, 75, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.header-logo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.header-title p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #D3874B;
+  font-weight: 600;
+}

@@ -1,0 +1,109 @@
+.staff-login {
+  min-height: 100vh;
+  background: #0A0A0B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.staff-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(245, 242, 235, 0.7);
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.staff-login-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 36px 26px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeIn .4s ease;
+}
+
+.staff-login-icon {
+  display: flex;
+  justify-content: center;
+  color: #D3874B;
+  margin-bottom: 16px;
+}
+
+.staff-login-card h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.staff-login-card > p {
+  text-align: center;
+  color: rgba(245, 242, 235, 0.5);
+  font-size: 14px;
+  margin: 0 0 28px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(245, 242, 235, 0.5);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  color: #F5F2EB;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #D3874B;
+}
+
+.error-message {
+  background: rgba(255, 107, 107, 0.12);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #FF6B6B;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.staff-login button[type="submit"] {
+  width: 100%;
+  background: linear-gradient(135deg, #E29A5C 0%, #C97A3D 100%);
+  color: #0A0A0B;
+  border: none;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.staff-login button[type="submit"]:disabled {
+  opacity: 0.5;
+}
