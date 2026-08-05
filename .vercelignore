@@ -1,0 +1,6 @@
+server.py
+requirements.txt
+runtime.txt
+__pycache__
+*.pyc
+*.db
