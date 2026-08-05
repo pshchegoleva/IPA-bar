@@ -174,6 +174,22 @@ def index():
     return jsonify({'status': 'ok', 'message': 'IPA Promo API работает'})
 
 @app.route('/api/bars', methods=['GET'])
+@app.route('/api/debug/promotions')
+def debug_promotions():
+    promos = Promotion.query.all()
+    bars = Bar.query.all()
+    return jsonify({
+        'promotions_count': len(promos),
+        'promotions': [{
+            'id': p.id,
+            'bar_id': p.bar_id,
+            'title': p.title,
+            'is_active': p.is_active,
+            'code_word': p.code_word
+        } for p in promos],
+        'bars_count': len(bars),
+        'bars': [{'id': b.id, 'name': b.name} for b in bars]
+    })
 def get_bars():
     bars = Bar.query.filter_by(is_active=True).all()
     return jsonify({'success': True, 'bars': [
