@@ -640,7 +640,6 @@ def init_db():
         print(f"✅ База инициализирована, баров: {len(bars)}")
 
 init_db()
-
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
