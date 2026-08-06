@@ -67,10 +67,12 @@ class Api {
     throw error;
   }
 }
-
-  async getMe(barId) {
-    return this.request(`/api/me?barId=${barId}`);
+  async getMe(barId, promoId) {
+    let url = `/api/me?barId=${barId}`;
+    if (promoId) url += `&promoId=${promoId}`;
+    return this.request(url);
   }
+  
 
   async getPhraseToday(vkId) {
     return this.request(`/api/phrase/today?vkId=${vkId}`);
