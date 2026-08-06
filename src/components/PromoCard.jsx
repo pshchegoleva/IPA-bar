@@ -18,7 +18,7 @@ export default function PromoCard({ user, barId, promoId, onGiftReceived }) {
 
   const loadStatus = async () => {
     try {
-      const me = await api.getMe(barId);
+      const me = await api.getMe(barId, promoId);
       setPromo(me.promotion);
       setStatus(me.giftStatus);
       if (me.activeQR) {
