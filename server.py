@@ -256,8 +256,12 @@ def get_me(current_user):
     bar_id = request.args.get('barId', type=int)
     bar = Bar.query.get(bar_id) if bar_id else None
 
+        promo_id = request.args.get('promoId', type=int)
+
     active_promo = None
-    if bar_id:
+    if promo_id:
+        active_promo = Promotion.query.filter_by(id=promo_id, is_active=True).first()
+    elif bar_id:
         active_promo = Promotion.query.filter_by(is_active=True, bar_id=bar_id).first()
 
     redeemed_qr = None
